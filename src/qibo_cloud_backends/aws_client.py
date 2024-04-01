@@ -64,7 +64,7 @@ if AWS_REQUIREMENTS:
             modified_code = re.sub(r'include\s+"qelib1.inc";\n', '', qasm_string)
             return modified_code
 
-        def execute_aws_circuit(self, circuit, initial_state=None, nshots=1000, **kwargs):
+        def execute_aws_circuit(self, circuit, initial_state=None, nshots=1000, topology=None, **kwargs):
             """Executes the passed circuit.
 
             Args:
@@ -80,6 +80,13 @@ if AWS_REQUIREMENTS:
                     NotImplementedError,
                     "The use of an `initial_state` is not supported yet.",
                 )
+            if topology is not None:
+                raise_error(
+                    NotImplementedError,
+                    "The use of topology of qubits is not supported yet.",
+                )
+                # To be done with verbatim circuits.
+                # Check verbatim circuits.
             if kwargs:
                 raise_error(
                     NotImplementedError,
@@ -91,6 +98,8 @@ if AWS_REQUIREMENTS:
             nqubits = circuit.nqubits
             circuit_qasm = circuit.to_qasm()
             qasm_program = self.remove_qelib1_inc(circuit_qasm)
+            # Check the compatibility of openqasm gates with aws-braket.
+            # Do a gate-to-gate translation to braket.
             qasm_program = Program(source = qasm_program)
             result = self.device.run(qasm_program, shots=nshots).result()
             samples = result.measurements
