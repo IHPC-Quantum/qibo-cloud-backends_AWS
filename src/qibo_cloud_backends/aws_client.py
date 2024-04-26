@@ -190,20 +190,20 @@ class BraketBackend(NumpyBackend):
         return transpiled_circuit, final_layout
 
     #def transpile_qasm_circuit(self, circuit_qasm, native_gates, custom_coupling_map, optimization_level=1):
-        """Transpiles a circuit given in OpenQASM format using Qiskit's transpiler.
-            Returns a circuit given in OpenQASM format.
+        # """Transpiles a circuit given in OpenQASM format using Qiskit's transpiler.
+        #     Returns a circuit given in OpenQASM format.
 
-        Args:
-            circuit_qasm (OpenQASM circuit, str): circuit given in the OpenQASM format.
-            native_gates (list, str): A list of strings representing the native gates of the QPU.
-                e.g. native_gates = ['ecr', 'i', 'rz', 'sx', 'x']
-            custom_coupling_map (list, list): A list containing lists representing the connectivity of the qubits.
-                e.g. custom_coupling_map. E.g. [[0, 1], [1, 2], [2, 3]]
-            optimization_level (int): Optimization level for Qiskit's transpiler. Range is from 0 to 3. Defaults to 1.
+        # Args:
+        #     circuit_qasm (OpenQASM circuit, str): circuit given in the OpenQASM format.
+        #     native_gates (list, str): A list of strings representing the native gates of the QPU.
+        #         e.g. native_gates = ['ecr', 'i', 'rz', 'sx', 'x']
+        #     custom_coupling_map (list, list): A list containing lists representing the connectivity of the qubits.
+        #         e.g. custom_coupling_map. E.g. [[0, 1], [1, 2], [2, 3]]
+        #     optimization_level (int): Optimization level for Qiskit's transpiler. Range is from 0 to 3. Defaults to 1.
 
-        Returns:
-            transpiled_circuit_qasm (OpenQASM circuit, str): Transpiled circuit in the OpenQASM format.
-        """
+        # Returns:
+        #     transpiled_circuit_qasm (OpenQASM circuit, str): Transpiled circuit in the OpenQASM format.
+        # """
 
         # self.native_gates = native_gates
         # self.custom_coupling_map = custom_coupling_map
@@ -225,19 +225,19 @@ class BraketBackend(NumpyBackend):
         # return transpiled_circuit_qasm
     
     #def transpile_qibo_to_braket(self, circuit_qibo, native_gates, custom_coupling_map, optimization_level=1):
-        """Transpiles a Qibo circuit using Qiskit's transpiler. Returns a Braket circuit.
+        # """Transpiles a Qibo circuit using Qiskit's transpiler. Returns a Braket circuit.
     
-        Args:
-            circuit_qibo (qibo.models.Circuit): Qibo circuit to transpile.
-            native_gates (list, str): A list of strings representing the native gates of the QPU.
-                e.g. native_gates = ['ecr', 'i', 'rz', 'sx', 'x']
-            custom_coupling_map (list, list): A list containing lists representing the connectivity of the qubits.
-                e.g. custom_coupling_map. E.g. [[0, 1], [1, 2], [2, 3]]
-            optimization_level (int): Optimization level for Qiskit's transpiler. Range is from 0 to 3. Defaults to 1.
+        # Args:
+        #     circuit_qibo (qibo.models.Circuit): Qibo circuit to transpile.
+        #     native_gates (list, str): A list of strings representing the native gates of the QPU.
+        #         e.g. native_gates = ['ecr', 'i', 'rz', 'sx', 'x']
+        #     custom_coupling_map (list, list): A list containing lists representing the connectivity of the qubits.
+        #         e.g. custom_coupling_map. E.g. [[0, 1], [1, 2], [2, 3]]
+        #     optimization_level (int): Optimization level for Qiskit's transpiler. Range is from 0 to 3. Defaults to 1.
     
-        Returns:
-            transpiled_circuit_braket (braket.circuits.Circuit): Braket circuit to that has been transpiled.
-        """
+        # Returns:
+        #     transpiled_circuit_braket (braket.circuits.Circuit): Braket circuit to that has been transpiled.
+        # """
             
         # self.native_gates = native_gates
         # self.custom_coupling_map = custom_coupling_map
